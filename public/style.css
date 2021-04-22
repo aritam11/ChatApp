@@ -1,13 +1,135 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap");
 
-body {
+* {
   font-family: "Poppins", sans-serif;
-  background: #444044;
+}
+
+body {
+  background: #20222d;
 }
 
 h2 {
   font-size: 1.2rem;
+  margin: 0px;
+  padding: 20px 20px 15px 20px;
+  font-weight: 700;
+  color: #fff;
+}
+
+#chat {
+  max-width: 600px;
+  height: 630px;
+  margin: 150px auto;
+  background: #20222d;
+  box-shadow: 20px 20px 45px #0f1015, -20px -20px 45px #313445;
+  border-radius: 25px;
+}
+
+#chat-window {
+  height: 400px;
+  overflow: auto;
+  background: #20222d;
+  box-shadow: inset 26px 26px 55px #0f1015, inset -26px -26px 55px #313445;
+  border-radius: 10px 10px 0px 0px;
+}
+
+#output p {
+  padding: 14px 0px;
+  margin: 0 20px;
+  border-bottom: 1px solid #444044;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+#feedback p {
+  color: rgb(0, 0, 0);
+  padding: 14px 0px;
+  margin: 0 20px;
+}
+
+#output strong {
+  color: #4d63cf;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+label {
+  box-sizing: border-box;
+  display: block;
+  padding: 10px 20px;
+}
+
+.take {
+  width: 100%;
+  background: #20222d;
+  margin: 0px;
+  padding-top: 15px;
+  border-radius: 0px 0px 25px 25px;
+  display: flex;
+  flex-direction: column;
+}
+input {
+  padding: 10px 20px;
+  box-sizing: border-box;
+  margin: 5px auto;
+  background: #20222d;
+  box-shadow: inset 6px 6px 45px #0f1015, inset -6px -6px 45px #313445;
+  color: #fff;
+  border: 0;
+  border-radius: 15px;
+  display: block;
+  width: 90%;
+  font-size: 16px;
+  outline: none;
+}
+
+input::placeholder {
+  color: #fff;
+  font-weight: 400;
+  filter: brightness(60%);
+  font-family: "Poppins", sans-serif;
+}
+
+.btn {
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid transparent;
+  outline: none;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.btn-send {
+  padding: 0.2rem 0.5rem;
+  background: #20222d;
+  box-shadow: 6px 6px 45px #0f1015, -6px -6px 45px #313445;
+  border-radius: 150px;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 500;
+  width: 30%;
+  margin: 10px auto;
+}
+
+.btn-send:hover {
+  background: #20222d;
+  box-shadow: inset 6px 6px 45px #0f1015, inset -6px -6px 45px #313445;
+  color: #fff;
+}
+
+/* * {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #cfcebc;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 10px;
   padding: 10px 20px;
   font-weight: 700;
   color: #fff;
@@ -15,24 +137,20 @@ h2 {
 
 #chat {
   max-width: 600px;
-  height: 655px;
+  height: 630px;
   margin: 30px auto;
-  background: rgb(1, 16, 255);
-  background: linear-gradient(
-    90deg,
-    rgba(1, 16, 255, 1) 0%,
-    rgba(77, 99, 207, 1) 100%
-  );
-  /* border: 2px solid #0110ff; */
-  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.05);
+  background: #cfcebc;
+  box-shadow: -10px -10px 20px 0px rgba(255, 255, 255, 0.05),
+    10px 10px 20px 0px rgba(0, 0, 0, 0.2);
   border-radius: 25px;
 }
 
 #chat-window {
   height: 400px;
   overflow: auto;
-  background: #fff;
-  border-bottom: 3px solid #7389c3;
+  background: #cfcebc;
+  box-shadow: inset -5px -5px 20px 0px rgba(255, 255, 255, 0.05),
+    inset 5px 5px 20px 0px rgba(0, 0, 0, 0.2);
   border-radius: 10px 10px 0px 0px;
 }
 
@@ -65,7 +183,7 @@ label {
 
 .take {
   width: 100%;
-  background: #fff;
+  background: #cfcebc;
   margin: 0px;
   padding-top: 15px;
   border-radius: 0px 0px 25px 25px;
@@ -76,15 +194,12 @@ input {
   padding: 10px 20px;
   box-sizing: border-box;
   margin: 5px auto;
-  background: rgb(1, 16, 255);
-  background: linear-gradient(
-    90deg,
-    rgba(1, 16, 255, 1) 35%,
-    rgba(77, 99, 207, 1) 100%
-  );
+  background: #cfcebc;
+  box-shadow: inset -5px -5px 20px 0px rgba(255, 255, 255, 0.05),
+    inset 5px 5px 20px 0px rgba(0, 0, 0, 0.2);
   color: #fff;
   border: 0;
-  border-radius: 30px;
+  border-radius: 15px;
   display: block;
   width: 90%;
   font-size: 16px;
@@ -93,20 +208,10 @@ input {
 
 input::placeholder {
   color: #fff;
-  font-weight: 100;
+  font-weight: 400;
+  filter: brightness(60%);
+  font-family: "Poppins", sans-serif;
 }
-/* button {
-  background: #0110ff;
-  color: #fff;
-  font-size: 18px;
-  border: 0;
-  padding: 0.8rem 2.5rem;
-  text-align: center;
-  width: 100px;
-  height: 50px;
-  margin: 10px auto;
-  border-radius: 20px;
-} */
 
 .btn {
   font-size: 1rem;
@@ -119,7 +224,9 @@ input::placeholder {
 
 .btn-send {
   padding: 0.2rem 0.5rem;
-  background: #0110ff;
+  background: #cfcebc;
+  box-shadow: -10px -10px 20px 0px rgba(255, 255, 255, 0.05),
+    10px 10px 20px 0px rgba(0, 0, 0, 0.2);
   border-radius: 150px;
   color: #fff;
   font-size: 1.3rem;
@@ -129,7 +236,8 @@ input::placeholder {
 }
 
 .btn-send:hover {
-  background: transparent;
-  border: 2.5px solid #0110ff;
-  color: #0110ff;
-}
+  background: #cfcebc;
+  box-shadow: inset -10px -10px 20px 0px rgba(255, 255, 255, 0.05),
+    inset 10px 10px 20px 0px rgba(0, 0, 0, 0.2);
+  color: #fff;
+} */
